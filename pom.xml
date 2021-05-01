@@ -11,7 +11,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <common-parent.deploy-url>https://maven.cloudsmith.io/anand-beh/lesser-gpl3/</common-parent.deploy-url>
     </properties>
+    
+    <scm>
+        <developerConnection>scm:git:https://github.com/A248/common-parent.git</developerConnection>
+    </scm>
     
     <build>
         <pluginManagement>
@@ -63,11 +68,11 @@
     <distributionManagement>
         <repository>
             <id>cloudsmith-deploy</id>
-            <url>https://maven.cloudsmith.io/anand-beh/gpl3/</url>
+            <url>https://maven.cloudsmith.io/anand-beh/lesser-gpl3/</url>
         </repository>
         <snapshotRepository>
             <id>cloudsmith-deploy</id>
-            <url>https://maven.cloudsmith.io/anand-beh/gpl3/</url>
+            <url>https://maven.cloudsmith.io/anand-beh/lesser-gpl3/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
