@@ -171,20 +171,6 @@
                 <version>3.0.0-M3</version>
                 <executions>
                     <execution>
-                        <id>enforce-stable-dependencies</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireReleaseDeps>
-                                    <failWhenParentIsSnapshot>fal</failWhenParentIsSnapshot>
-                                    <message>SNAPSHOT dependencies are unstable and ought to be avoided</message>
-                                </requireReleaseDeps>
-                            </rules>
-                        </configuration>
-                    </execution>
-                    <execution>
                         <id>enforce-no-guava</id>
                         <goals>
                             <goal>enforce</goal>
