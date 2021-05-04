@@ -4,7 +4,7 @@
 
     <groupId>space.arim.parent</groupId>
     <artifactId>common-parent</artifactId>
-    <version>0.2.4-SNAPSHOT</version>
+    <version>0.2.4</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -17,7 +17,7 @@
     
     <scm>
         <developerConnection>scm:git:https://github.com/A248/common-parent.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>0.2.4</tag>
   </scm>
     
     <build>
