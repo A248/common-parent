@@ -178,6 +178,7 @@
                         <configuration>
                             <rules>
                                 <requireReleaseDeps>
+                                    <failWhenParentIsSnapshot>fal</failWhenParentIsSnapshot>
                                     <message>SNAPSHOT dependencies are unstable and ought to be avoided</message>
                                 </requireReleaseDeps>
                             </rules>
