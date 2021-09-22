@@ -10,9 +10,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <common-parent.deployUrl>https://maven.cloudsmith.io/anand-beh/lesser-gpl3/</common-parent.deployUrl>
-        <common-parent.skipJavadoc>false</common-parent.skipJavadoc>
-        <common-parent.skipSources>false</common-parent.skipSources>
-        <common-parent.asmVersion>9.1</common-parent.asmVersion>
+        <common-parent.skip-javadoc>false</common-parent.skip-javadoc>
+        <common-parent.skip-sources>false</common-parent.skip-sources>
     </properties>
     
     <scm>
@@ -81,20 +80,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.1.2</version>
-                    <!-- Fix analysis of test classes when using JDK 16 -->
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.ow2.asm</groupId>
-                            <artifactId>asm</artifactId>
-                            <version>${common-parent.asmVersion}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.ow2.asm</groupId>
-                            <artifactId>asm-commons</artifactId>
-                            <version>${common-parent.asmVersion}</version>
-                        </dependency>
-                    </dependencies>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -131,7 +117,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.0-M4</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
@@ -151,7 +137,7 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <skipSource>${common-parent.skipSources}</skipSource>
+                    <skipSource>${common-parent.skip-sources}</skipSource>
                 </configuration>
                 <executions>
                     <execution>
@@ -165,9 +151,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.1</version>
                 <configuration>
-                    <skip>${common-parent.skipJavadoc}</skip>
+                    <skip>${common-parent.skip-javadoc}</skip>
                 </configuration>
                 <executions>
                     <execution>
@@ -182,7 +168,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.0.0</version>
             </plugin>
         </plugins>
     </build>
