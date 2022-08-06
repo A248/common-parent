@@ -9,36 +9,35 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <common-parent.deployUrl>https://maven.cloudsmith.io/anand-beh/lesser-gpl3/</common-parent.deployUrl>
+        <common-parent.deploy-url>https://maven.cloudsmith.io/anand-beh/lesser-gpl3/</common-parent.deploy-url>
         <common-parent.skip-javadoc>false</common-parent.skip-javadoc>
         <common-parent.skip-sources>false</common-parent.skip-sources>
     </properties>
-    
+
     <scm>
-        <developerConnection>scm:git:https://github.com/A248/common-parent.git</developerConnection>
+        <connection>scm:git:ssh://git@github.com/A248/common-parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/A248/common-parent.git</developerConnection>
+        <url>http://github.com/A248/common-parent</url>
       <tag>HEAD</tag>
   </scm>
-    
+
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>3.0.0-M5</version>
-                    <configuration>
-                        <trimStackTrace>false</trimStackTrace>
-                    </configuration>
+                    <version>3.0.0-M7</version>
                     <executions>
                         <execution>
                             <id>run-integration-tests</id>
@@ -57,30 +56,27 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M5</version>
-                    <configuration>
-                        <trimStackTrace>false</trimStackTrace>
-                    </configuration>
+                    <version>3.0.0-M7</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.2.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>3.2.4</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -117,10 +113,11 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M4</version>
+                    <version>3.0.0-M6</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                        <signTag>true</signTag>
                         <tagNameFormat>@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
@@ -135,7 +132,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.2.1</version>
                 <configuration>
                     <skipSource>${common-parent.skip-sources}</skipSource>
                 </configuration>
@@ -151,7 +148,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.4.0</version>
                 <configuration>
                     <skip>${common-parent.skip-javadoc}</skip>
                 </configuration>
@@ -168,7 +165,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
             </plugin>
         </plugins>
     </build>
@@ -176,11 +173,11 @@
     <distributionManagement>
         <repository>
             <id>cloudsmith-deploy</id>
-            <url>${common-parent.deployUrl}</url>
+            <url>${common-parent.deploy-url}</url>
         </repository>
         <snapshotRepository>
             <id>cloudsmith-deploy</id>
-            <url>${common-parent.deployUrl}</url>
+            <url>${common-parent.deploy-url}</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
