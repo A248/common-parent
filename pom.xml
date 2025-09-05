@@ -113,6 +113,7 @@
                     <configuration>
                         <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                         <localRepositoryPath>${project.build.directory}/local-it-repo</localRepositoryPath>
+                        <scope>test</scope>
                     </configuration>
                 </plugin>
                 <plugin>
